@@ -1,4 +1,4 @@
-export const siteConfig = {
+const defaultConfig = {
   company: {
     name: 'РемонтПро',
     tagline: 'Профессиональный ремонт под ключ',
@@ -106,3 +106,19 @@ export const siteConfig = {
     copyright: '© 2024 РемонтПро. Все права защищены.'
   }
 };
+
+const getStoredConfig = () => {
+  if (typeof window === 'undefined') return defaultConfig;
+  
+  const stored = localStorage.getItem('siteConfig');
+  if (stored) {
+    try {
+      return JSON.parse(stored);
+    } catch (e) {
+      return defaultConfig;
+    }
+  }
+  return defaultConfig;
+};
+
+export const siteConfig = getStoredConfig();
