@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Slider } from '@/components/ui/slider';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
+import { siteConfig } from '@/config/siteConfig';
 
 const CalculatorContact = () => {
   const { toast } = useToast();
@@ -140,7 +141,7 @@ const CalculatorContact = () => {
                     </div>
                     <div>
                       <p className="font-semibold">Телефон</p>
-                      <p className="text-muted-foreground">+7 (999) 123-45-67</p>
+                      <p className="text-muted-foreground">{siteConfig.contact.phone}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -149,7 +150,7 @@ const CalculatorContact = () => {
                     </div>
                     <div>
                       <p className="font-semibold">Email</p>
-                      <p className="text-muted-foreground">info@remontpro.ru</p>
+                      <p className="text-muted-foreground">{siteConfig.contact.email}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -158,7 +159,7 @@ const CalculatorContact = () => {
                     </div>
                     <div>
                       <p className="font-semibold">Адрес</p>
-                      <p className="text-muted-foreground">Москва, ул. Примерная, д. 1</p>
+                      <p className="text-muted-foreground">{siteConfig.contact.address}</p>
                     </div>
                   </div>
                 </div>
@@ -205,10 +206,10 @@ const CalculatorContact = () => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Icon name="Home" size={28} />
-                <span className="text-xl font-bold">РемонтПро</span>
+                <span className="text-xl font-bold">{siteConfig.company.name}</span>
               </div>
               <p className="text-white/80">
-                Профессиональный ремонт помещений любой сложности с гарантией качества
+                {siteConfig.footer.description}
               </p>
             </div>
             <div>
@@ -223,14 +224,14 @@ const CalculatorContact = () => {
             <div>
               <h3 className="font-bold text-lg mb-4">Контакты</h3>
               <ul className="space-y-2 text-white/80">
-                <li>+7 (999) 123-45-67</li>
-                <li>info@remontpro.ru</li>
-                <li>Москва, ул. Примерная, д. 1</li>
+                <li>{siteConfig.contact.phone}</li>
+                <li>{siteConfig.contact.email}</li>
+                <li>{siteConfig.contact.address}</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-white/20 pt-8 text-center text-white/60">
-            <p>© 2024 РемонтПро. Все права защищены.</p>
+            <p>{siteConfig.footer.copyright}</p>
           </div>
         </div>
       </footer>

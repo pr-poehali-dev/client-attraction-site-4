@@ -3,6 +3,7 @@ import Icon from '@/components/ui/icon';
 import HeroSection from '@/components/HeroSection';
 import ServicesProcessReviews from '@/components/ServicesProcessReviews';
 import CalculatorContact from '@/components/CalculatorContact';
+import { siteConfig } from '@/config/siteConfig';
 
 const Index = () => {
   return (
@@ -13,7 +14,7 @@ const Index = () => {
             <div className="flex items-center gap-2">
               <Icon name="Home" className="text-primary" size={28} />
               <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                РемонтПро
+                {siteConfig.company.name}
               </span>
             </div>
             <div className="hidden md:flex items-center gap-6">
@@ -25,7 +26,7 @@ const Index = () => {
             </div>
             <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
               <Icon name="Phone" size={16} className="mr-2" />
-              +7 (999) 123-45-67
+              {siteConfig.contact.phone}
             </Button>
           </div>
         </div>

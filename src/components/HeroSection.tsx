@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import { siteConfig } from '@/config/siteConfig';
 
 const HeroSection = () => {
   return (
@@ -9,10 +10,10 @@ const HeroSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-                Профессиональный ремонт под ключ
+                {siteConfig.company.tagline}
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Превращаем ваши идеи в реальность. Квартиры, офисы, коттеджи — любая сложность с гарантией качества
+                {siteConfig.company.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8" onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -26,16 +27,16 @@ const HeroSection = () => {
               </div>
               <div className="mt-12 grid grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">500+</div>
-                  <div className="text-sm text-muted-foreground">Завершённых проектов</div>
+                  <div className="text-4xl font-bold text-primary mb-2">{siteConfig.stats.projects}</div>
+                  <div className="text-sm text-muted-foreground">{siteConfig.stats.projectsLabel}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-secondary mb-2">12</div>
-                  <div className="text-sm text-muted-foreground">Лет на рынке</div>
+                  <div className="text-4xl font-bold text-secondary mb-2">{siteConfig.stats.years}</div>
+                  <div className="text-sm text-muted-foreground">{siteConfig.stats.yearsLabel}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-accent mb-2">98%</div>
-                  <div className="text-sm text-muted-foreground">Довольных клиентов</div>
+                  <div className="text-4xl font-bold text-accent mb-2">{siteConfig.stats.satisfaction}</div>
+                  <div className="text-sm text-muted-foreground">{siteConfig.stats.satisfactionLabel}</div>
                 </div>
               </div>
             </div>
